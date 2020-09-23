@@ -26,13 +26,17 @@ button.on("click", function() {
     tbody.html("");
 
      // Select the input for different filtering values 
-     var inputElement = d3.select("#datetime");
+     var inputElement = d3.select("#input");
 
      // Get the value property of the filtering values 
      var inputValue = inputElement.property("value");
      console.log(inputValue);
  
      // Filter data to match input value 
-     var filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
+     var filteredData = tableData.filter(sighting => sighting.datetime === inputValue ||
+                                                     sighting.city === inputValue ||
+                                                     sighting.state === inputValue ||
+                                                     sighting.country === inputValue ||
+                                                     sighting.shape === inputValue);
      console.log(filteredData);
 });
