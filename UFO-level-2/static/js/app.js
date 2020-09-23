@@ -19,3 +19,9 @@ tableData.forEach(function(ufoSighting) {
       cell.text(value);
     });
   });
+
+// Create an event for button
+var button = d3.select("#filter-btn");
+button.on("click", function() {
+    tbody.html("");
+});
