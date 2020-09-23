@@ -39,4 +39,8 @@ button.on("click", function() {
                                                      sighting.country === inputValue ||
                                                      sighting.shape === inputValue);
      console.log(filteredData);
+
+     filteredData.forEach(function(selections) {
+        console.log(selections);
+     });
 });
