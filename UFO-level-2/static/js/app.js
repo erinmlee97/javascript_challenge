@@ -24,4 +24,15 @@ tableData.forEach(function(ufoSighting) {
 var button = d3.select("#filter-btn");
 button.on("click", function() {
     tbody.html("");
+
+     // Select the input for different filtering values 
+     var inputElement = d3.select("#datetime");
+
+     // Get the value property of the filtering values 
+     var inputValue = inputElement.property("value");
+     console.log(inputValue);
+ 
+     // Filter data to match input value 
+     var filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
+     console.log(filteredData);
 });
