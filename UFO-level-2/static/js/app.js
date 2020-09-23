@@ -40,7 +40,18 @@ button.on("click", function() {
                                                      sighting.shape === inputValue);
      console.log(filteredData);
 
-     filteredData.forEach(function(selections) {
-        console.log(selections);
-     });
+    filteredData.forEach(function(selections) {
+    console.log(selections);
+
+    // Append rows for each row in data
+    var row = tbody.append("tr");
+
+    // Console.log each UFO Sighting value
+    Object.entries(selections).forEach(function([key, value]) {
+        console.log(key, value);
+        // Append a cell to the row for each value
+        var cell = row.append("td");
+        cell.text(value);
+    });
+});
 });
